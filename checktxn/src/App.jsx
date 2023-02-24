@@ -2,6 +2,7 @@ import style from './App.module.scss';
 import Header from './components/header';
 import SubHeader from './components/sub-header';
 import Chaintext from './components/chaintext';
+import Explorer from './components/explorer';
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <Header /> 
       <section className={style.mainBody}>
         <SubHeader />      
-        <Chaintext />  
+        <Chaintext />
+        <Explorer />  
         </section>   
     </div>
   );

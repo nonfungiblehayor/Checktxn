@@ -121,4 +121,39 @@ $bgColor: #120545;
             }
         }
     }
+    .explorerSection {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .inputDiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            .search {
+                width: 550px;
+                background-color: #ffffff;
+                border: none;
+                border-radius: 10px;
+                padding: 20px;
+                @include styleAttr();
+                font-size: 16px;
+                margin-right: -60px;
+            }
+            a {
+                background-color: #120545;
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 4px;
+                .srcImg {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+    }
 }
