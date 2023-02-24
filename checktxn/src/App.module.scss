@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+$txtColor: #ffffff;
+$txtFont: 'Inter', sans-serif;
+$bgColor: #120545;
+
+@mixin styleAttr {
+    color: $txtColor;
+    font-family: $txtFont;
+}
+
+.header {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $bgColor;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    .headerDiv1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .logoImg {
+            width: 70px;
+            height: 70px;
+        }
+        .logoName {
+            color: $txtColor;
+            font-family: $txtFont;
+            font-size: 25px;
+        }
+    }
+    .headerDiv2 {
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+        gap: 30px;
+        a {
+            color: $txtColor;
+            font-family: $txtFont;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        a:active {
+            border-bottom: 1px solid $txtColor;
+        } 
+    }
+    .headerDiv3 {
+        .btnStyle {
+            border: none;
+            width: 160px;
+            height: 50px;
+            border-radius: 8px;
+            text-align: center;
+            @include styleAttr();
+            font-size: 15px;
+            color: $bgColor;
+            font-weight: 400;
+        }
+    }
+}
