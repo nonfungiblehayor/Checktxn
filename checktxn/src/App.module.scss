@@ -63,3 +63,49 @@ $bgColor: #120545;
         }
     }
 }
+.mainBody {
+    background-image: url(./images/bg.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    max-width: 100%;
+    padding-top: 35px;
+    .chains {
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        .chainDiv {
+            width: 200px;
+            height: 90px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            border-radius: 5px;
+            background-color: #1205456b;
+            .imgDiv {
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+            .txtDiv {
+                display: flex;
+                flex-direction: column;
+                max-width: 100%;
+                .fTxt {
+                    @include styleAttr();
+                    font-size: 14px;
+                }
+                .lTxt {
+                    @include styleAttr();
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
