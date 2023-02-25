@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@web3-react/core": "^6.1.9",
     "sass": "^1.58.3"
   }
 }
