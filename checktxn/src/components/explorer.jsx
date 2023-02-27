@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from '../App.module.scss';
 
 function Explorer(props) {
+    // const [txnValue, txnState] = useState('');
+    // const handleChange = event => {
+    //     txnState(event.target.value);
+    //   };
     return <section className={style.explorerSection}>
         <div className={style.inputDiv}>
-            <input type='search' className={style.search} value='' placeholder='search for any onchain transaction'></input>
-            <a href='/'>
+            <input type='search' className={style.search} onChange={props.fnc2} placeholder='search for any on chain transaction by Txn hash'></input>
+            <a href={props.link1}>
                 <img src={props.img1} className={style.srcImg} alt='exploring chain logo'></img>
             </a>
         </div>

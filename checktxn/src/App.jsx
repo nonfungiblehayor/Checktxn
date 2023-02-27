@@ -12,25 +12,47 @@ import solana from './images/solana.webp';
 function App() {
   const [chains, chainState] = useState('Matic');
   const [chainImg, chainImgState] = useState(Matic);
+  const [chainLink, chainLinkState] = useState('https://polygonscan.com/')
+
+  const [txnValue, txnState] = useState('');
+    const handleChange = event => {
+        txnState(event.target.value);
+        if(chainLink == 'https://etherscan.io/tx/') {
+          chainLinkState(`https://etherscan.com/tx/${event.target.value}`)
+        } else if(chainLink === 'https://polygonscan.com/tx/') {
+          chainLinkState(`https://polygonscan.com/tx/${event.target.value}`)
+        } else if(chainLink === 'https://solscan.io/tx/') {
+          chainLinkState(`https://solscan.io/tx/${event.target.value}`)
+        } else if(chainLink === 'https://bscscan.com/tx/') {
+          chainLinkState(`https://bscscan.com/tx/${event.target.value}`)                    
+        }
+      };
 
   const changeState1 = () => {
     chainState('ETH');
-    chainImgState(ETH)
+    chainImgState(ETH);
+    chainLinkState('https://etherscan.io/tx/');
+    console.log(chainLink)
   }
 
   const changeState2 = () => {
     chainState('Matic');
-    chainImgState(Matic)
+    chainImgState(Matic);
+    chainLinkState('https://polygonscan.com/tx/')
+    console.log(chainLink)
   }
 
   const changeState3 = () => {
     chainState('SOL');
-    chainImgState(solana)
+    chainImgState(solana);
+    chainLinkState(`https://solscan.io/tx/${txnValue}`)
+    console.log(chainLink)
   }
 
   const changeState4 = () => {
     chainState('BNB');
-    chainImgState(BNB)
+    chainImgState(BNB);
+    chainLinkState(`https://bscscan.com/tx/${txnValue}`)
   }
   return (
     <div className={style.App}>
@@ -38,7 +60,7 @@ function App() {
       <section className={style.mainBody}>
         <SubHeader fnc1={changeState1} fnc2={changeState2} fnc3={changeState3} fnc4={changeState4}/>      
         <Chaintext txt1={chains}/>
-        <Explorer img1={chainImg}/>  
+        <Explorer img1={chainImg} link1={chainLink} fnc2={handleChange}/>  
         </section>   
     </div>
   );
