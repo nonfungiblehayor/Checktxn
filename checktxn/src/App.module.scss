@@ -63,6 +63,10 @@ $bgColor: #120545;
             color: $bgColor;
             font-weight: 400;
         }
+        .userAddress {
+            @include styleAttr();
+            font-size: 20px;
+        }
     }
 }
 .mainBody {
