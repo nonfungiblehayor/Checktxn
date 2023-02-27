@@ -5,9 +5,9 @@ import polygon from '../images/polygon.webp';
 import solana from '../images/solana.webp';
 import Binance from '../images/Binance.webp';
 
-function SubHeader() {
+function SubHeader(props) {
     return <section className={style.chains}>
-    <div className={style.chainDiv}>
+    <div className={style.chainDiv} onClick={props.fnc1}>
         <div className={style.imgDiv}>
             <img src={Ethereum} className={style.eth} alt='eth logo'></img>
         </div>
@@ -16,7 +16,7 @@ function SubHeader() {
             <p className={style.lTxt}>Ethereum</p>
         </div>
     </div>    
-    <div className={style.chainDiv}>
+    <div className={style.chainDiv} onClick={props.fnc2}>
         <div className={style.imgDiv}>
             <img src={polygon} className={style.eth} alt='matic logo'></img>
         </div>
@@ -25,7 +25,7 @@ function SubHeader() {
             <p className={style.lTxt}>Polygon</p>
         </div>
     </div>    
-    <div className={style.chainDiv}>
+    <div className={style.chainDiv} onClick={props.fnc3}>
         <div className={style.imgDiv}>
             <img src={solana} className={style.eth} alt='sol logo'></img>
         </div>
@@ -34,7 +34,7 @@ function SubHeader() {
             <p className={style.lTxt}>Solana</p>
         </div>
     </div>      
-    <div className={style.chainDiv}>
+    <div className={style.chainDiv} onClick={props.fnc4}>
         <div className={style.imgDiv}>
             <img src={Binance} className={style.eth} alt='bnb logo'></img>
         </div>

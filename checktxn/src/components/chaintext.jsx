@@ -1,11 +1,11 @@
 import React from 'react';
 import style from '../App.module.scss';
 
-function Chaintext() {
+function Chaintext(props) {
     return <section className={style.chainTxt}>
         <div className={style.exploreTxt}>
             <h1>
-                Matic blockchain explorer
+                {props.txt1} blockchain explorer
             </h1>
         </div>
     </section>
