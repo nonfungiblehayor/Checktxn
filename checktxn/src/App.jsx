@@ -8,6 +8,7 @@ import ETH from './images/Ethereum.webp';
 import Matic from './images/polygon.webp';
 import BNB from './images/Binance.webp';
 import solana from './images/solana.webp';
+import Txndetail from './components/txnDetail';
 
 function App() {
   const [chains, chainState] = useState('Matic');
@@ -17,7 +18,7 @@ function App() {
   const [txnValue, txnState] = useState('');
     const handleChange = event => {
         txnState(event.target.value);
-        if(chainLink == 'https://etherscan.io/tx/') {
+        if(chainLink === 'https://etherscan.io/tx/') {
           chainLinkState(`https://etherscan.com/tx/${event.target.value}`)
         } else if(chainLink === 'https://polygonscan.com/tx/') {
           chainLinkState(`https://polygonscan.com/tx/${event.target.value}`)
@@ -61,6 +62,7 @@ function App() {
         <SubHeader fnc1={changeState1} fnc2={changeState2} fnc3={changeState3} fnc4={changeState4}/>      
         <Chaintext txt1={chains}/>
         <Explorer img1={chainImg} link1={chainLink} fnc2={handleChange}/>  
+        <Txndetail />
         </section>   
     </div>
   );

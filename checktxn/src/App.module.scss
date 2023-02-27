@@ -163,4 +163,34 @@ $bgColor: #120545;
             }
         }
     }
+    .txnSection {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        padding-top: 25px;
+        .txnContainer {
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: flex-start;
+        background-color: #1205456b;
+        .div1 {
+            display: flex;
+            flex-direction: column;       
+            p {
+                @include styleAttr();
+            }
+        }
+        .div2 {
+            display: flex;
+            flex-direction: column;       
+            p {
+                @include styleAttr();
+            }
+        }
+        }
+    }
 }
