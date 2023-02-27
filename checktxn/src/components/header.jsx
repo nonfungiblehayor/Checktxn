@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from '../App.module.scss'
 import logo from '../images/logo.webp'
 import { ethers } from 'ethers';
@@ -26,6 +26,32 @@ function Header() {
         userAddressState(userAddress)
     }
 
+    useEffect(() => {
+        async function connectWallet() {
+            if(localStorage?.getItem('isWalletConnected') === 'true') {
+            try {
+                    let web3Modal = new Web3Modal( Option, {
+                        cacheProvider: false,
+                        disableInjectedProvider: true,
+                        providerOptions2,
+                    })
+                    const modalConnector = await web3Modal.connect();
+                    const modalConnectorIns = new ethers.providers.Web3Provider(modalConnector);
+                    const result = {...modalConnectorIns.provider};
+                    let userAddress2 = result.selectedAddress;
+                    const addrArray = userAddress2.split(" ");
+                    const eachStr = addrArray[0].slice(0, 21)
+                    userAddress = eachStr;
+                    localStorage.setItem('isWalletConnected', true)             
+                    altUserState2()
+                    altUserState()
+            } catch(error) {
+                console.error('error')
+            }
+        }    
+    } connectWallet()   
+    }, [])
+
     async function connectWallet() {
         try {
             if(window.ethereum) {
@@ -40,7 +66,8 @@ function Header() {
                 let userAddress2 = result.selectedAddress;
                 const addrArray = userAddress2.split(" ");
                 const eachStr = addrArray[0].slice(0, 21)
-                userAddress = eachStr              
+                userAddress = eachStr;
+                localStorage.setItem('isWalletConnected', true)             
                 altUserState2()
                 altUserState()
             } else {
