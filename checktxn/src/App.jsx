@@ -14,12 +14,17 @@ function App() {
   const [chains, chainState] = useState('Matic');
   const [chainImg, chainImgState] = useState(Matic);
   const [chainLink, chainLinkState] = useState('https://polygonscan.com/')
-
   const [txnValue, txnState] = useState('');
-    const handleChange = event => {
+
+    
+    const handleChange = async event => {
         txnState(event.target.value);
         if(chainLink === 'https://etherscan.io/tx/') {
           chainLinkState(`https://etherscan.com/tx/${event.target.value}`)
+          let response = await fetch(`https://api.etherscan.io/api?module=transaction&action=gettxreceiptstatus&txhash=${event.target.value}&apikey=PBA7B9N9ZZR8UMSN7S5C16Q1YWXAZAUQBU`)
+          let data = await response.json();
+          let rcvData = data.result.status;
+          console.log(rcvData)
         } else if(chainLink === 'https://polygonscan.com/tx/') {
           chainLinkState(`https://polygonscan.com/tx/${event.target.value}`)
         } else if(chainLink === 'https://solscan.io/tx/') {
