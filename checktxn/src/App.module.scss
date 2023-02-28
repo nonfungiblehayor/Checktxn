@@ -190,6 +190,25 @@ $bgColor: #120545;
             p {
                 @include styleAttr();
             }
+            .txnStatus1 {
+                width: 80px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+                padding: 8px;
+                border: 1px solid #00a186;
+                background-color: #00a18657;
+                border-radius: 8px;
+                img {
+                    width: 25px;
+                    height: 25px;
+                }
+                span {
+                    color: #00a186;
+                    @include styleAttr();
+                }
+            }
         }
         }
     }
