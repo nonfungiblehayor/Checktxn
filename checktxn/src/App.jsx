@@ -42,6 +42,17 @@ function App() {
           }     
         } else if(chainLink === 'https://polygonscan.com/tx/') {
           chainLinkState(`https://polygonscan.com/tx/${event.target.value}`)
+          let response = await fetch(`https://api.polygonscan.com/api?module=transaction&action=gettxreceiptstatus&txhash=${event.target.value}&apikey=NTY3TXWBF26IDF2GT43MTKDPHZTIBGDA1Q`)
+          let data = await response.json();
+          if(data.result.status === '1') {
+            txn = data.result.status;
+            hash(event.target.value);
+            console.log(txn)
+            console.log(hashValue)
+            handleState()
+          } else {
+            console.log(10)
+          }     
         } else if(chainLink === 'https://solscan.io/tx/') {
           chainLinkState(`https://solscan.io/tx/${event.target.value}`)
         } else if(chainLink === 'https://bscscan.com/tx/') {
