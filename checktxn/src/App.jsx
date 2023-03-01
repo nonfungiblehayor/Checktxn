@@ -16,7 +16,7 @@ function App() {
   const [chainLink, chainLinkState] = useState('https://polygonscan.com/')
   const [txnValue, txnState] = useState('');
   let txn;
-  let hash;
+  const [hashValue, hash] = useState('')
   const [success, successState] = useState(false);
 
   const handleState = () => {
@@ -33,8 +33,9 @@ function App() {
           let data = await response.json();
           if(data.result.status === '1') {
             txn = data.result.status;
-            hash = event.target.value;
+            hash(event.target.value);
             console.log(txn)
+            console.log(hashValue)
             handleState()
           } else {
             console.log(10)
@@ -81,7 +82,7 @@ function App() {
         <SubHeader fnc1={changeState1} fnc2={changeState2} fnc3={changeState3} fnc4={changeState4}/>      
         <Chaintext txt1={chains}/>
         <Explorer img1={chainImg} link1={chainLink} fnc2={handleChange}/>  
-        {success ?  <Txndetail stat={success} hashVal={hash}/> : ''} 
+        {success ?  <Txndetail stat={success} hashVal={hashValue}/> : ''} 
         </section>   
     </div>
   );

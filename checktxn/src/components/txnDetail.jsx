@@ -15,7 +15,7 @@ function Txndetail(props) {
         </div>
         <div className={style.div2}>            
             <p>
-            0x09d5bec1847ae9f7c02a314eaef54e35dd3d09d0d7ea6605406e9a5ed74e64df
+            {props.hashVal}
             </p>
             {  props.stat ? 
                 <div className={style.txnStatus1}>
@@ -25,7 +25,7 @@ function Txndetail(props) {
              <div className={style.txnStatus1}>
                 <img src={mark} alt='succes logo'></img>
                 <span>failed</span>
-            </div>            
+            </div>          
             
             }
         </div>
