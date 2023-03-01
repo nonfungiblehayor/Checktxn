@@ -56,7 +56,19 @@ function App() {
         } else if(chainLink === 'https://solscan.io/tx/') {
           chainLinkState(`https://solscan.io/tx/${event.target.value}`)
         } else if(chainLink === 'https://bscscan.com/tx/') {
-          chainLinkState(`https://bscscan.com/tx/${event.target.value}`)                    
+          chainLinkState(`https://bscscan.com/tx/${event.target.value}`)
+          chainLinkState(`https://polygonscan.com/tx/${event.target.value}`)
+          let response = await fetch(`https://api.bscscan.com/api?module=transaction&action=gettxreceiptstatus&txhash=${event.target.value}&apikey=PS4NMI5W8YT3QI68PYBYNJ7CZFA39A4GS3`)
+          let data = await response.json();
+          if(data.result.status === '1') {
+            txn = data.result.status;
+            hash(event.target.value);
+            console.log(txn)
+            console.log(hashValue)
+            handleState()
+          } else {
+            console.log(10)
+          }                      
         }
       };
 
