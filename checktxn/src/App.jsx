@@ -15,6 +15,14 @@ function App() {
   const [chainImg, chainImgState] = useState(Matic);
   const [chainLink, chainLinkState] = useState('https://polygonscan.com/')
   const [txnValue, txnState] = useState('');
+  let txn;
+  let hash;
+  const [success, successState] = useState(false);
+
+  const handleState = () => {
+    successState(!success);
+    console.log(success)
+  }
 
     
     const handleChange = async event => {
@@ -23,8 +31,14 @@ function App() {
           chainLinkState(`https://etherscan.com/tx/${event.target.value}`)
           let response = await fetch(`https://api.etherscan.io/api?module=transaction&action=gettxreceiptstatus&txhash=${event.target.value}&apikey=PBA7B9N9ZZR8UMSN7S5C16Q1YWXAZAUQBU`)
           let data = await response.json();
-          let rcvData = data.result.status;
-          console.log(rcvData)
+          if(data.result.status === '1') {
+            txn = data.result.status;
+            hash = event.target.value;
+            console.log(txn)
+            handleState()
+          } else {
+            console.log(10)
+          }     
         } else if(chainLink === 'https://polygonscan.com/tx/') {
           chainLinkState(`https://polygonscan.com/tx/${event.target.value}`)
         } else if(chainLink === 'https://solscan.io/tx/') {
@@ -67,7 +81,7 @@ function App() {
         <SubHeader fnc1={changeState1} fnc2={changeState2} fnc3={changeState3} fnc4={changeState4}/>      
         <Chaintext txt1={chains}/>
         <Explorer img1={chainImg} link1={chainLink} fnc2={handleChange}/>  
-        <Txndetail />
+        {success ?  <Txndetail stat={success} hashVal={hash}/> : ''} 
         </section>   
     </div>
   );
