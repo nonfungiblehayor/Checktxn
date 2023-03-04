@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from '../App.module.scss'
 import logo from '../images/logo.webp'
+import menu from '../images/menu.webp'
 import { ethers } from 'ethers';
 import Web3Modal from 'web3modal'
 import  CoinbaseWalletSDK from '@coinbase/wallet-sdk';
@@ -18,8 +19,13 @@ function Header() {
     }
     const [user, userState] = useState(false);
     let [userAddress, userAddressState] = useState('');
+    const [menuBar, menuState] = useState(true)
     const altUserState = () => {
         userState(!user)
+    }
+
+    const changeMenu = () => {
+        menuState(!menuBar)
     }
 
     const altUserState2 = () => {
@@ -77,13 +83,15 @@ function Header() {
             console.error('error')
         }
     }
- return <header className={style.header}>
+ return <React.Fragment> {menuBar ? 
+    <header className={style.header}>
         <div className={style.headerDiv1}>
             <a href='/'>
                 <img src={logo} alt='logo img' className={style.logoImg}></img>
             </a>
             <span className={style.logoName}>Checktxn</span>
         </div>
+        <img src={menu} className={style.menuImg} onClick={changeMenu} alt='menu bar'></img>
         <div className={style.headerDiv2}>
             <a href='/'>Home</a>
             <a href='/'>Verify txn</a>
@@ -94,6 +102,20 @@ function Header() {
              <button className={style.btnStyle} onClick={connectWallet}>Connect your wallet</button>            
             }
         </div>
+    </header> :
+    <header className={style.header2}>
+    <div className={style.headerDiv2}>
+            <a href='/'>Home</a>
+            <a href='/'>Verify txn</a>
+            <a href='About'>About</a>
+        </div>
+        <div className={style.headerDiv3}>
+            {user ? <p className={style.userAddress}> {userAddress} </p> : 
+             <button className={style.btnStyle} onClick={connectWallet}>Connect your wallet</button>            
+            }
+        </div>
     </header>
+    }
+    </React.Fragment>
 }
 export default Header 

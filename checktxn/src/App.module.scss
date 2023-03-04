@@ -36,6 +36,9 @@ $bgColor: #120545;
             font-size: 25px;
         }
     }
+    .menuImg { 
+        display: none;
+    }
     .headerDiv2 {
         display: flex;
         flex-direction: row;
@@ -68,6 +71,9 @@ $bgColor: #120545;
             font-size: 20px;
         }
     }
+}
+.header2 {
+    display: none;
 }
 .mainBody {
     background-image: url(./images/bg.webp);
@@ -259,6 +265,9 @@ $bgColor: #120545;
                 font-size: 16px;
             }
         }
+        .menuImg { 
+            display: none;
+        }
         .headerDiv2 {
             display: flex;
             flex-direction: row;
@@ -292,6 +301,9 @@ $bgColor: #120545;
             }
         }
     }  
+    .header2 {
+        display: none;
+    }
     .mainBody {
         background-image: url(./images/bg.webp);
         background-size: cover;
@@ -486,6 +498,9 @@ $bgColor: #120545;
                 font-size: 16px;
             }
         }
+        .menuImg { 
+            display: none;
+        }
         .headerDiv2 {
             display: flex;
             flex-direction: row;
@@ -519,6 +534,9 @@ $bgColor: #120545;
             }
         }
     } 
+    .header2 {
+        display: none;
+    }
     .mainBody {
         background-image: url(./images/bg.webp);
         background-size: cover;
@@ -687,5 +705,123 @@ $bgColor: #120545;
             }
             }
         }        
+    }
+}
+
+@media screen and (max-width: 581px) and (min-width: 320px) {
+    .header {
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: $bgColor;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 20px;
+        align-items: center;
+        .headerDiv1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 100%;
+            // z-index: -1;
+            .logoImg {
+                width: 40px;
+                height: 40px;
+            }
+            .logoName {
+                color: $txtColor;
+                font-family: $txtFont;
+                font-size: 16px;
+            }
+        }
+        .menuImg {
+            display: flex;
+            width: 25px;
+            height: 25px;
+        }
+        .headerDiv2 {
+            display: none;
+            flex-direction: row;
+            max-width: 100%;
+            gap: 20px;
+            a {
+                color: $txtColor;
+                font-family: $txtFont;
+                font-size: 14px;
+                text-decoration: none;
+            }
+            a:active {
+                border-bottom: 1px solid $txtColor;
+            } 
+        }
+        .headerDiv3 {
+            display: none;
+            .btnStyle {
+                border: none;
+                width: 120px;
+                height: 40px;
+                border-radius: 8px;
+                text-align: center;
+                @include styleAttr();
+                font-size: 10px;
+                color: $bgColor;
+                font-weight: 400;
+            }
+            .userAddress {
+                @include styleAttr();
+                font-size: 11px;
+            }
+        }
+    } 
+    .header2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        background-color: $bgColor;
+        z-index: 3;
+        height: 250px;
+        gap: 25px;
+        margin-top: -5px;
+        .headerDiv2 {
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            gap: 40px;
+            text-align: center;
+            padding-top: 20px;
+            justify-content: center;
+            a {
+                color: $txtColor;
+                font-family: $txtFont;
+                font-size: 18px;
+                text-decoration: none;
+            }
+            a:active {
+                border-bottom: 1px solid $txtColor;
+            } 
+        }
+        .headerDiv3 {
+            display: flex;
+            .btnStyle {
+                border: none;
+                width: 120px;
+                height: 40px;
+                border-radius: 8px;
+                text-align: center;
+                @include styleAttr();
+                font-size: 10px;
+                color: $bgColor;
+                font-weight: 400;
+            }
+            .userAddress {
+                @include styleAttr();
+                font-size: 11px;
+            }
+        }
     }
 }
