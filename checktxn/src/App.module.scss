@@ -232,3 +232,231 @@ $bgColor: #120545;
         }
     }
 }
+
+@media screen and (max-width: 950px) and (min-width: 769px) {
+    .header {
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: $bgColor;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        align-items: center;
+        .headerDiv1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .logoImg {
+                width: 40px;
+                height: 40px;
+            }
+            .logoName {
+                color: $txtColor;
+                font-family: $txtFont;
+                font-size: 16px;
+            }
+        }
+        .headerDiv2 {
+            display: flex;
+            flex-direction: row;
+            max-width: 100%;
+            gap: 30px;
+            a {
+                color: $txtColor;
+                font-family: $txtFont;
+                font-size: 14px;
+                text-decoration: none;
+            }
+            a:active {
+                border-bottom: 1px solid $txtColor;
+            } 
+        }
+        .headerDiv3 {
+            .btnStyle {
+                border: none;
+                width: 160px;
+                height: 50px;
+                border-radius: 8px;
+                text-align: center;
+                @include styleAttr();
+                font-size: 15px;
+                color: $bgColor;
+                font-weight: 400;
+            }
+            .userAddress {
+                @include styleAttr();
+                font-size: 14px;
+            }
+        }
+    }  
+    .mainBody {
+        background-image: url(./images/bg.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        background-position: center;
+        max-width: 100%;
+        padding-top: 45px;
+        .chains {
+            max-width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            .chainDiv {
+                width: 150px;
+                height: 70px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                border-radius: 5px;
+                background-color: #1205456b;
+                .imgDiv {
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                .txtDiv {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 100%;
+                    .fTxt {
+                        @include styleAttr();
+                        font-size: 12px;
+                    }
+                    .lTxt {
+                        @include styleAttr();
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .chainTxt {
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .exploreTxt {
+                h1 {
+                    @include styleAttr();
+                    font-size: 30px;
+                    text-align: center;
+                }
+            }
+        }
+        .explorerSection {
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .inputDiv {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                .search {
+                    width: 550px;
+                    background-color: #ffffff;
+                    border: none;
+                    border-radius: 10px;
+                    padding: 20px;
+                    @include styleAttr();
+                    font-size: 14px;
+                    margin-right: -60px;
+                    color: #120545;
+                }
+                a {
+                    background-color: #120545;
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 4px;
+                    .srcImg {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+        .txnSection {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+            padding-top: 25px;
+            .txnContainer {
+            width: 80%;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            align-items: flex-start;
+            background-color: #1205456b;
+            .div1 {
+                display: flex;
+                flex-direction: column;       
+                p {
+                    @include styleAttr();
+                }
+            }
+            .div2 {
+                display: flex;
+                flex-direction: column;  
+                padding-top: 8px;
+                gap: 15px;     
+                p {
+                    @include styleAttr();
+                    font-size: 12px;
+                }
+                .txnStatus1 {
+                    width: 80px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    padding: 5px;
+                    border: 1px solid #00a186;
+                    background-color: #00a18657;
+                    border-radius: 8px;
+                    img {
+                        width: 15px;
+                        height: 15px;
+                    }
+                    span {
+                        color: #00a186;
+                        @include styleAttr();
+                    }
+                }
+                .txnStatus2 {
+                    width: 80px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    padding: 5px;
+                    border: 1px solid red;
+                    background-color: rgba(255, 0, 0, 0.39);
+                    border-radius: 8px;
+                    img {
+                        width: 15px;
+                        height: 15px;
+                    }
+                    span {
+                        color: #00a186;
+                        @include styleAttr();
+                    }
+                }
+            }
+            }
+        }        
+    }
+
+}
