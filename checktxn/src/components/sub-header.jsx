@@ -7,7 +7,7 @@ import Binance from '../images/Binance.webp';
 
 function SubHeader(props) {
     return <>
-    <h3 className={style.swipe}>Swipe to the left to select your preffered chain</h3>
+    <h3 className={style.swipe}>Swipe to the right to select your preffered chain</h3>
     <section className={style.chains}>
     <div className={style.chainDiv} onClick={props.fnc1}>
         <div className={style.imgDiv}>
