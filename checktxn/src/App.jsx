@@ -3,6 +3,7 @@ import Header from './components/header';
 import SubHeader from './components/sub-header';
 import Chaintext from './components/chaintext';
 import Explorer from './components/explorer';
+import Footer from './components/footer';
 import { useState } from 'react';
 import ETH from './images/Ethereum.webp';
 import Matic from './images/polygon.webp';
@@ -110,6 +111,7 @@ function App() {
         <Chaintext txt1={chains}/>
         <Explorer img1={chainImg} link1={chainLink} fnc2={handleChange}/>  
         {success ?  <Txndetail stat={success} hashVal={hashValue} txnStat={txn}/> : ''}
+        <Footer />
         </section>   
     </div>
   )
