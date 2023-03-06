@@ -787,6 +787,8 @@ $bgColor: #120545;
         height: 250px;
         gap: 25px;
         margin-top: -5px;
+        padding-bottom: 40px;
+        margin-bottom: -40px;
         .headerDiv2 {
             display: flex;
             flex-direction: column;
@@ -833,69 +835,17 @@ $bgColor: #120545;
         max-width: 100%;
         padding-top: 25px;
         .chains {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 15px;
-            overflow: scroll;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
             overflow-x: scroll;
             scroll-snap-type: x mandatory;
-            padding-left: 290px;
-            align-items: center;
-            padding-right: 15px;
-            // display: flex;
-            // flex-direction: row;
-            // justify-content: center;
-            // align-items: flex-start;
-            // gap: 25px;
+            width: 100vw;
+            justify-content: start;
+            gap: 20px;
             .chainDiv {
                 width: 100vw;
                 height: 90px;
-                padding: 20px;
-                // scroll-snap-align: start;
-                // display: flex;
-                // flex-direction: column;
-                // height: 120px;
-                // display: flex;
-                // flex-direction: column;
-                // justify-content: center;
-                // align-items: center;
-                // gap: 10px;
-                // border-radius: 5px;
-                // background-color: #1205456b;
-                .imgDiv {
-                    img {
-                        width: 25px;
-                        height: 25px;
-                    }
-                }
-                .txtDiv {
-                    display: flex;
-                    flex-direction: column;
-                    max-width: 100%;
-                    align-items: center;
-                    justify-content: center;
-                    .fTxt {
-                        @include styleAttr();
-                        font-size: 12px;
-                    }
-                    .lTxt {
-                        @include styleAttr();
-                        font-size: 12px;
-                    }
-                }
-            }
-            .chainDiv2 {
-                width: 100vw;
-                height: 120px;
-                display: flex;
                 scroll-snap-align: center;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-                border-radius: 5px;
-                background-color: #1205456b;
                 .imgDiv {
                     img {
                         width: 25px;
