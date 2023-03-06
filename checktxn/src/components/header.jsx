@@ -94,7 +94,7 @@ function Header() {
         <img src={menu} className={style.menuImg} onClick={changeMenu} alt='menu bar'></img>
         <div className={style.headerDiv2}>
             <a href='/'>Home</a>
-            <a href='/'>Verify txn</a>
+            <a href='#verifytxn'>Verify txn</a>
             <a href='About'>About</a>
         </div>
         <div className={style.headerDiv3}>

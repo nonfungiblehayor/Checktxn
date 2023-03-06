@@ -175,6 +175,15 @@ $bgColor: #120545;
             }
         }
     }
+    .verifytxn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        max-width: 100%;
+        h2 {
+            @include styleAttr();
+        }
+    }
     .txnSection {
         display: flex;
         justify-content: center;

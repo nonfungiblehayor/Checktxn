@@ -109,10 +109,9 @@ function App() {
         <SubHeader fnc1={changeState1} fnc2={changeState2} fnc3={changeState3} fnc4={changeState4}/>      
         <Chaintext txt1={chains}/>
         <Explorer img1={chainImg} link1={chainLink} fnc2={handleChange}/>  
-        {success ?  <Txndetail stat={success} hashVal={hashValue} txnStat={txn}/> : ''} 
+        {success ?  <Txndetail stat={success} hashVal={hashValue} txnStat={txn}/> : ''}
         </section>   
     </div>
-  );
+  )
 }
-
 export default App;

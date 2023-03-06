@@ -6,7 +6,7 @@ function Explorer(props) {
     // const handleChange = event => {
     //     txnState(event.target.value);
     //   };
-    return <section className={style.explorerSection}>
+    return <React.Fragment> <section className={style.explorerSection}>
         <div className={style.inputDiv}>
             <input type='search' className={style.search} onChange={props.fnc2} placeholder='search for any on chain transaction by Txn hash'></input>
             <a href={props.link1}>
@@ -14,5 +14,9 @@ function Explorer(props) {
             </a>
         </div>
     </section>
+    <div className={style.verifytxn} id='verifytxn'>
+     <h2>Transaction verification</h2>
+     </div>
+     </React.Fragment>
 }
 export default Explorer
