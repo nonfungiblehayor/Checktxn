@@ -6,7 +6,9 @@ import solana from '../images/solana.webp';
 import Binance from '../images/Binance.webp';
 
 function SubHeader(props) {
-    return <section className={style.chains}>
+    return <>
+    <h3 className={style.swipe}>Swipe to the left to select your preffered chain</h3>
+    <section className={style.chains}>
     <div className={style.chainDiv} onClick={props.fnc1}>
         <div className={style.imgDiv}>
             <img src={Ethereum} className={style.eth} alt='eth logo'></img>
@@ -44,5 +46,6 @@ function SubHeader(props) {
         </div>
     </div>              
     </section>
+    </>
 }
 export default SubHeader

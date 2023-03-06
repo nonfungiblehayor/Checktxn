@@ -83,6 +83,9 @@ $bgColor: #120545;
     background-position: center;
     max-width: 100%;
     padding-top: 45px;
+    .swipe {
+        display: none;
+    }
     .chains {
         max-width: 100%;
         display: flex;
@@ -153,6 +156,9 @@ $bgColor: #120545;
                 font-size: 16px;
                 margin-right: -60px;
                 color: #120545;
+            }
+            .search:focus {
+                outline: none;
             }
             a {
                 background-color: #120545;
@@ -312,6 +318,9 @@ $bgColor: #120545;
         background-position: center;
         max-width: 100%;
         padding-top: 45px;
+        .swipe {
+            display: none;
+        }
         .chains {
             max-width: 100%;
             display: flex;
@@ -545,6 +554,9 @@ $bgColor: #120545;
         background-position: center;
         max-width: 100%;
         padding-top: 45px;
+        .swipe {
+            display: none;
+        }
         .chains {
             max-width: 100%;
             display: flex;
@@ -787,7 +799,7 @@ $bgColor: #120545;
         height: 250px;
         gap: 25px;
         margin-top: -5px;
-        padding-bottom: 40px;
+        padding-bottom: 90px;
         margin-bottom: -40px;
         .headerDiv2 {
             display: flex;
@@ -834,6 +846,14 @@ $bgColor: #120545;
         background-position: center;
         max-width: 100%;
         padding-top: 25px;
+        .swipe {
+            @include styleAttr();
+            font-size: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
         .chains {
             display: grid;
             grid-template-columns: auto auto auto auto;
@@ -905,6 +925,9 @@ $bgColor: #120545;
                     @include styleAttr();
                     font-size: 9px;
                     color: #120545;
+                }
+                .search:focus {
+                    outline: none;
                 }
                 a {
                     background-color: #120545;
