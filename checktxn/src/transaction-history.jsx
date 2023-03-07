@@ -36,7 +36,7 @@ function Transactionhistory() {
         txnState(event.target.value);
         if(chainLink === 'https://etherscan.io/tx/') {
           chainLinkState(`https://etherscan.com/tx/${event.target.value}`)
-          let response = await fetch(`https://api.etherscan.io/api?module=account&action=txlist&address=${event.target.value}&startblock=0&endblock=99999999&page=1&offset=10 &sort=asc&apikey=PBA7B9N9ZZR8UMSN7S5C16Q1YWXAZAUQBU`)
+          let response = await fetch(`https://api.etherscan.io/api?module=account&action=txlist&address=${event.target.value}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=PBA7B9N9ZZR8UMSN7S5C16Q1YWXAZAUQBU`)
           let data = await response.json();
           const allData = data.result;
           setFirstData(allData[0])
@@ -46,36 +46,28 @@ function Transactionhistory() {
           setFifthData(allData[4])
         } else if(chainLink === 'https://polygonscan.com/tx/') {
           chainLinkState(`https://polygonscan.com/tx/${event.target.value}`)
-          let response = await fetch(`https://api.polygonscan.com/api?module=transaction&action=gettxreceiptstatus&txhash=${event.target.value}&apikey=NTY3TXWBF26IDF2GT43MTKDPHZTIBGDA1Q`)
+          let response = await fetch(`https://api.polygonscan.com/api?module=account&action=txlist&address=${event.target.value}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=NTY3TXWBF26IDF2GT43MTKDPHZTIBGDA1Q`)
           let data = await response.json();
-          if(data.result.status === '1') {
-            txnSetting(data.result.status);
-            hash(event.target.value);
-            console.log(txn)
-            console.log(hashValue)
-            handleState()
-          } else {
-            hash(event.target.value);
-            handleState()
-          }     
+          const allData = data.result;
+          setFirstData(allData[0])
+          setSecondData(allData[1])
+          setThirdData(allData[2])
+          setForthData(allData[3])
+          setFifthData(allData[4])
         } else if(chainLink === 'https://solscan.io/tx/') {
           chainLinkState(`https://solscan.io/tx/${event.target.value}`)
           let response = await fetch(`https://public-api.solscan.io/transaction/${event.target.value}`)
           console.log(response)
         } else if(chainLink === 'https://bscscan.com/tx/') {
           chainLinkState(`https://bscscan.com/tx/${event.target.value}`)
-          let response = await fetch(`https://api.bscscan.com/api?module=transaction&action=gettxreceiptstatus&txhash=${event.target.value}&apikey=PS4NMI5W8YT3QI68PYBYNJ7CZFA39A4GS3`)
+          let response = await fetch(`https://api.bscscan.com/api?module=account&action=txlist&address=${event.target.value}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=PS4NMI5W8YT3QI68PYBYNJ7CZFA39A4GS3`)
           let data = await response.json();
-          if(data.result.status === '1') {
-            txnSetting(data.result.status);
-            hash(event.target.value);
-            console.log(txn)
-            console.log(hashValue)
-            handleState()
-          } else {
-            hash(event.target.value);
-            handleState()
-          }                      
+          const allData = data.result;
+          setFirstData(allData[0])
+          setSecondData(allData[1])
+          setThirdData(allData[2])
+          setForthData(allData[3])
+          setFifthData(allData[4])                          
         }
       };
 
