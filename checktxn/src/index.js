@@ -4,17 +4,12 @@ import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import About from './components/about';
 import Transactionhistory from './transaction-history';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-  },
-  {
-    path: "about",
-    element: <About />,
   },
   {
     path: "transaction-history",

@@ -96,7 +96,7 @@ function Header() {
             <a href='/'>Home</a>
             <a href='#verifytxn'>Verify-transaction</a>
             <a href="transaction-history">transaction-history</a>
-            <a href='About'>About</a>
+            <a href='https://docs.google.com/document/d/1AvGczXLT3wkMCDXFfa1z_4zltU-vp06-XGRRNrhtysA/edit?usp=sharing'>Docs</a>
         </div>
         <div className={style.headerDiv3}>
             {user ? <p className={style.userAddress}> {userAddress} </p> : 
@@ -109,7 +109,7 @@ function Header() {
             <a href='/'>Home</a>
             <a href='#verifytxn'>Verify txn</a>
             <a href="transaction-history">transaction-history</a>
-            <a href='About'>About</a>
+            <a href='https://docs.google.com/document/d/1AvGczXLT3wkMCDXFfa1z_4zltU-vp06-XGRRNrhtysA/edit?usp=sharing'>Docs</a>
         </div>
         <div className={style.headerDiv3}>
             {user ? <p className={style.userAddress}> {userAddress} </p> : 
