@@ -95,7 +95,7 @@ function Header() {
         <div className={style.headerDiv2}>
             <a href='/'>Home</a>
             <a href='#verifytxn'>Verify-transaction</a>
-            <a href="AllTxn">All-transaction</a>
+            <a href="transaction-history">transaction-history</a>
             <a href='About'>About</a>
         </div>
         <div className={style.headerDiv3}>
@@ -108,7 +108,7 @@ function Header() {
     <div className={style.headerDiv2}>
             <a href='/'>Home</a>
             <a href='#verifytxn'>Verify txn</a>
-            <a href="AllTxn">All-transaction</a>
+            <a href="transaction-history">transaction-history</a>
             <a href='About'>About</a>
         </div>
         <div className={style.headerDiv3}>

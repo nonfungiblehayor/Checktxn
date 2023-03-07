@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import About from './components/about';
-import AllTxn from './allTxn';
+import Transactionhistory from './transaction-history';
 
 const router = createBrowserRouter([
   {
@@ -17,8 +17,8 @@ const router = createBrowserRouter([
     element: <About />,
   },
   {
-    path: "allTxn",
-    element: <AllTxn />,
+    path: "transaction-history",
+    element: <Transactionhistory />,
   },
 ]);
 

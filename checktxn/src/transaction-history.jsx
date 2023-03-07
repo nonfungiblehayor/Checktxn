@@ -11,7 +11,7 @@ import BNB from './images/Binance.webp';
 import solana from './images/solana.webp';
 import DataResult from "./components/dataResult";
 
-function AllTxn() {
+function Transactionhistory() {
   const [chains, chainState] = useState('Matic');
   const [chainImg, chainImgState] = useState(Matic);
   const [chainLink, chainLinkState] = useState('https://polygonscan.com/')
@@ -120,4 +120,4 @@ function AllTxn() {
         </section>   
     </section>
 }
-export default AllTxn
+export default Transactionhistory
