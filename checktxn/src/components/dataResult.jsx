@@ -44,7 +44,7 @@ function DataResult() {
                 <p>0x9aa99c23f67c81701c772b106b4f83f6e858dd2e</p>                
             </div>
             <div className={style.blockNumbers}>  
-                <h5>Transaction Index</h5>              
+                <h5> Index</h5>              
                 <p>11</p>
                 <p>11</p>
                 <p>11</p>
@@ -52,7 +52,7 @@ function DataResult() {
                 <p>11</p>            
              </div>
              <div className={style.blockNumbers}>  
-                <h5>Gas used</h5>              
+                <h5>Gas</h5>              
                 <p>4457269</p>
                 <p>4457269</p>
                 <p>4457269</p>

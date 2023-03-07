@@ -274,7 +274,7 @@ $bgColor: #120545;
         flex-direction: row;
         background-color: $bgColor;
         align-items: center;
-        gap: 25px;
+        gap: 20px;
         height: 45vh;
         margin-top: 40px;
         .blockNumbers {
@@ -284,7 +284,7 @@ $bgColor: #120545;
             align-items: center;
             h5 {
                 @include styleAttr();
-                font-size: 12px;
+                font-size: 10px;
                 margin-bottom: 5px;
             }    
             p {
@@ -334,7 +334,7 @@ $bgColor: #120545;
             a {
                 color: $txtColor;
                 font-family: $txtFont;
-                font-size: 14px;
+                font-size: 12px;
                 text-decoration: none;
             }
             a:active {
@@ -529,7 +529,36 @@ $bgColor: #120545;
                 }
             }
             }
-        }        
+        }  
+        .tableSection {
+            display: flex;
+            flex-direction: row;
+            background-color: $bgColor;
+            align-items: center;
+            gap: 30px;
+            height: 45vh;
+            margin-top: 40px;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            padding-left: 20px;
+            padding-right: 30px;
+            .blockNumbers {
+                display: flex;
+                flex-direction: column;
+                width: 50vw;
+                align-items: center;
+                h5 {
+                    @include styleAttr();
+                    font-size: 10px;
+                    margin-bottom: 5px;
+                }    
+                p {
+                    @include styleAttr();
+                    font-size: 8px;
+                    margin-bottom: 20px;
+                }        
+            }
+        }      
     }
 }
 
@@ -570,7 +599,7 @@ $bgColor: #120545;
             a {
                 color: $txtColor;
                 font-family: $txtFont;
-                font-size: 14px;
+                font-size: 10px;
                 text-decoration: none;
             }
             a:active {
@@ -591,7 +620,7 @@ $bgColor: #120545;
             }
             .userAddress {
                 @include styleAttr();
-                font-size: 11px;
+                font-size: 8px;
             }
         }
     } 
@@ -768,7 +797,36 @@ $bgColor: #120545;
                 }
             }
             }
-        }        
+        }     
+        .tableSection {
+            display: flex;
+            flex-direction: row;
+            background-color: $bgColor;
+            align-items: center;
+            gap: 30px;
+            height: 45vh;
+            margin-top: 40px;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            padding-left: 20px;
+            padding-right: 30px;
+            .blockNumbers {
+                display: flex;
+                flex-direction: column;
+                width: 50vw;
+                align-items: center;
+                h5 {
+                    @include styleAttr();
+                    font-size: 10px;
+                    margin-bottom: 5px;
+                }    
+                p {
+                    @include styleAttr();
+                    font-size: 8px;
+                    margin-bottom: 20px;
+                }        
+            }
+        }     
     }
 }
 
@@ -954,6 +1012,16 @@ $bgColor: #120545;
                 }
             }
         }
+        .verifytxn {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            max-width: 100%;
+            h2 {
+                @include styleAttr();
+                font-size: 16px;
+            }
+        }
         .explorerSection {
             max-width: 100%;
             display: flex;
@@ -1073,6 +1141,35 @@ $bgColor: #120545;
                 }
             }
             }
-        }        
+        }    
+        .tableSection {
+            display: flex;
+            flex-direction: row;
+            background-color: $bgColor;
+            align-items: center;
+            gap: 40px;
+            height: 45vh;
+            margin-top: 40px;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            padding-left: 20px;
+            padding-right: 30px;
+            .blockNumbers {
+                display: flex;
+                flex-direction: column;
+                width: 100vw;
+                align-items: center;
+                h5 {
+                    @include styleAttr();
+                    font-size: 10px;
+                    margin-bottom: 5px;
+                }    
+                p {
+                    @include styleAttr();
+                    font-size: 8px;
+                    margin-bottom: 20px;
+                }        
+            }
+        }      
     }
 }
