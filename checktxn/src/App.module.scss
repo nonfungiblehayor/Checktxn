@@ -47,7 +47,7 @@ $bgColor: #120545;
         a {
             color: $txtColor;
             font-family: $txtFont;
-            font-size: 18px;
+            font-size: 14px;
             text-decoration: none;
         }
         a:active {
@@ -269,7 +269,33 @@ $bgColor: #120545;
             height: 20px;
         }
     }
+    .tableSection {
+        display: flex;
+        flex-direction: row;
+        background-color: $bgColor;
+        align-items: center;
+        gap: 25px;
+        height: 45vh;
+        margin-top: 40px;
+        .blockNumbers {
+            display: flex;
+            flex-direction: column;
+            width: 70vw;
+            align-items: center;
+            h5 {
+                @include styleAttr();
+                font-size: 12px;
+                margin-bottom: 5px;
+            }    
+            p {
+                @include styleAttr();
+                font-size: 8px;
+                margin-bottom: 20px;
+            }        
+        }
+    }
 }
+
 
 @media screen and (max-width: 950px) and (min-width: 769px) {
     .header {

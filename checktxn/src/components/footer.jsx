@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import style from '../App.module.scss';
 import Linkedin from '../images/linkedin.webp';
 import github from '../images/github.webp';

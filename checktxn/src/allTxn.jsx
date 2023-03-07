@@ -1,17 +1,17 @@
+import React from "react";
 import style from './App.module.scss';
 import Header from './components/header';
 import SubHeader from './components/sub-header';
 import Chaintext from './components/chaintext';
 import Explorer from './components/explorer';
-import Footer from './components/footer';
 import { useState } from 'react';
 import ETH from './images/Ethereum.webp';
 import Matic from './images/polygon.webp';
 import BNB from './images/Binance.webp';
 import solana from './images/solana.webp';
-import Txndetail from './components/txnDetail';
+import DataResult from "./components/dataResult";
 
-function App() {
+function AllTxn() {
   const [chains, chainState] = useState('Matic');
   const [chainImg, chainImgState] = useState(Matic);
   const [chainLink, chainLinkState] = useState('https://polygonscan.com/')
@@ -30,18 +30,19 @@ function App() {
         txnState(event.target.value);
         if(chainLink === 'https://etherscan.io/tx/') {
           chainLinkState(`https://etherscan.com/tx/${event.target.value}`)
-          let response = await fetch(`https://api.etherscan.io/api?module=transaction&action=gettxreceiptstatus&txhash=${event.target.value}&apikey=PBA7B9N9ZZR8UMSN7S5C16Q1YWXAZAUQBU`)
+          let response = await fetch(`https://api.etherscan.io/api?module=account&action=txlist&address=${event.target.value}&startblock=0&endblock=99999999&page=1&offset=10 &sort=asc&apikey=PBA7B9N9ZZR8UMSN7S5C16Q1YWXAZAUQBU`)
           let data = await response.json();
-          if(data.result.status === '1') {
-            txnSetting(data.result.status);
-            hash(event.target.value);
-            console.log(txn)
-            console.log(hashValue)
-            handleState()
-          } else {
-            hash(event.target.value);
-            handleState()  
-          }     
+          console.log(data)
+          // if(data.result.status === '1') {
+          //   txnSetting(data.result.status);
+          //   hash(event.target.value);
+          //   console.log(txn)
+          //   console.log(hashValue)
+          //   handleState()
+          // } else {
+          //   hash(event.target.value);
+          //   handleState()  
+          // }     
         } else if(chainLink === 'https://polygonscan.com/tx/') {
           chainLinkState(`https://polygonscan.com/tx/${event.target.value}`)
           let response = await fetch(`https://api.polygonscan.com/api?module=transaction&action=gettxreceiptstatus&txhash=${event.target.value}&apikey=NTY3TXWBF26IDF2GT43MTKDPHZTIBGDA1Q`)
@@ -103,20 +104,20 @@ function App() {
     chainImgState(BNB);
     chainLinkState(`https://bscscan.com/tx/${txnValue}`)
   }
-  return (
-    <div className={style.App}>
-      <Header /> 
+
+    return <section className={style.bodySection}>
+         <Header /> 
       <section className={style.mainBody}>
         <SubHeader fnc1={changeState1} fnc2={changeState2} fnc3={changeState3} fnc4={changeState4}/>      
-        <Chaintext txt1={chains}/>
-        <Explorer img1={chainImg} link1={chainLink} fnc2={handleChange}/>  
-        <div className={style.verifytxn} id='verifytxn'>
-        <h2>Transaction verification</h2>
+        <div className={style.verifytxn}>
+        <h2>check your last 5 on chain transactions</h2>
         </div>
-        {success ?  <Txndetail stat={success} hashVal={hashValue} txnStat={txn}/> : ''}
-        <Footer />
+        <Explorer img1={chainImg} link1={chainLink} fnc2={handleChange}/> 
+        <div className={style.verifytxn}>
+        <h2>Transaction history</h2>
+        </div>
+        <DataResult />
         </section>   
-    </div>
-  )
+    </section>
 }
-export default App;
+export default AllTxn

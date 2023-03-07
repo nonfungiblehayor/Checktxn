@@ -14,9 +14,6 @@ function Explorer(props) {
             </a>
         </div>
     </section>
-    <div className={style.verifytxn} id='verifytxn'>
-     <h2>Transaction verification</h2>
-     </div>
      </React.Fragment>
 }
 export default Explorer

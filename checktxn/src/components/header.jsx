@@ -94,7 +94,8 @@ function Header() {
         <img src={menu} className={style.menuImg} onClick={changeMenu} alt='menu bar'></img>
         <div className={style.headerDiv2}>
             <a href='/'>Home</a>
-            <a href='#verifytxn'>Verify txn</a>
+            <a href='#verifytxn'>Verify-transaction</a>
+            <a href="AllTxn">All-transaction</a>
             <a href='About'>About</a>
         </div>
         <div className={style.headerDiv3}>
@@ -106,7 +107,8 @@ function Header() {
     <header className={style.header2}>
     <div className={style.headerDiv2}>
             <a href='/'>Home</a>
-            <a href='/'>Verify txn</a>
+            <a href='#verifytxn'>Verify txn</a>
+            <a href="AllTxn">All-transaction</a>
             <a href='About'>About</a>
         </div>
         <div className={style.headerDiv3}>
