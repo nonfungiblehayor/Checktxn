@@ -20,6 +20,12 @@ function Transactionhistory() {
   const [hashValue, hash] = useState('')
   const [success, successState] = useState(false);
 
+  let [firstData, setFirstData] = useState([]);
+  let [secondData, setSecondData] = useState([]);
+  let [thirdData, setThirdData] = useState([]);
+  let [forthData, setForthData] = useState([]);
+  let [fifthData, setFifthData] = useState([]);
+
   const handleState = () => {
     successState(!success);
     console.log(success)
@@ -32,17 +38,12 @@ function Transactionhistory() {
           chainLinkState(`https://etherscan.com/tx/${event.target.value}`)
           let response = await fetch(`https://api.etherscan.io/api?module=account&action=txlist&address=${event.target.value}&startblock=0&endblock=99999999&page=1&offset=10 &sort=asc&apikey=PBA7B9N9ZZR8UMSN7S5C16Q1YWXAZAUQBU`)
           let data = await response.json();
-          console.log(data)
-          // if(data.result.status === '1') {
-          //   txnSetting(data.result.status);
-          //   hash(event.target.value);
-          //   console.log(txn)
-          //   console.log(hashValue)
-          //   handleState()
-          // } else {
-          //   hash(event.target.value);
-          //   handleState()  
-          // }     
+          const allData = data.result;
+          setFirstData(allData[0])
+          setSecondData(allData[1])
+          setThirdData(allData[2])
+          setForthData(allData[3])
+          setFifthData(allData[4])
         } else if(chainLink === 'https://polygonscan.com/tx/') {
           chainLinkState(`https://polygonscan.com/tx/${event.target.value}`)
           let response = await fetch(`https://api.polygonscan.com/api?module=transaction&action=gettxreceiptstatus&txhash=${event.target.value}&apikey=NTY3TXWBF26IDF2GT43MTKDPHZTIBGDA1Q`)
@@ -116,7 +117,7 @@ function Transactionhistory() {
         <div className={style.verifytxn}>
         <h2>Transaction history</h2>
         </div>
-        <DataResult />
+        <DataResult dataSet1={firstData} dataSet2={secondData} dataSet3={thirdData} dataSet4={forthData} dataSet5={fifthData}/>
         </section>   
     </section>
 }
